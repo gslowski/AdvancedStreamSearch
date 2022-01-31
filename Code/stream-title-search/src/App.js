@@ -26,8 +26,8 @@ function App() {
   const fetchStreams = () => {
     helix.get(`https://api.twitch.tv/helix/streams?first=100&game_id=18122`)
       .then((res) => {
-        console.log(res)
-        setStreams(res.data);
+        console.log(res.data.data)
+        setStreams(res.data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -47,7 +47,6 @@ function App() {
 
   const searchKeywordHandler = (event) => {
     setKeywords(event.target.value)
-    console.log(keywords)
   };
 
   const [streams, setStreams] = useState([]);
@@ -57,22 +56,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-background">
-        <div className="box" css={css`width: 95%; position: absolute; top: 5%`}>
-          <div className="columns">
-            <div className="column is-half">
-              <input className="input"
-                type="text"
-                placeholder="Enter search keyword."
-                css={css`width: 85%`}
-                onChange={searchKeywordHandler}></input>
-              <button className="button is-warning" css={css`width: 15%`}>Search</button>
-            </div>
-            <div className="column is-half">
-            </div>
+        <div css={css`width: 95%; position: absolute; top: 1vh`}>
+          <div className="box" css={css`width: 100%; position: relative; top: 5vh; margin: auto;`}>
+            <input className="input"
+              type="text"
+              placeholder="What interests you today?"
+              css={css`width: 85%`}
+              onChange={searchKeywordHandler}></input>
+            <button className="button is-warning" css={css`width: 15%`}>Search</button>
           </div>
-        </div>
-        <div className="box" css={css`width: 95%; position: absolute; top: 25%`}>
+          <div className="box" css={css`width: 100%; position: relative; top: 2vh; margin: auto;`}>
 
+          </div>
         </div>
       </header>
     </div>
