@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { jsx, css } from "@emotion/react";
 import 'bulma/css/bulma.css';
 import axios from 'axios';
+import Results from './Components/Results';
 
 function App() {
 
@@ -55,8 +56,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-background">
-        <div css={css`width: 95%; position: absolute; top: 1vh`}>
+      <header className="App-header">
+
+      </header>
+
+      <div className="App-background">
+        <div css={css`width: 95%; position: absolute; top: 5vh`}>
           <div className="box" css={css`width: 100%; position: relative; top: 5vh; margin: auto;`}>
             <input className="input"
               type="text"
@@ -66,10 +71,12 @@ function App() {
             <button className="button is-warning" css={css`width: 15%`}>Search</button>
           </div>
           <div className="box" css={css`width: 100%; position: relative; top: 2vh; margin: auto;`}>
-
+            <div className="columns is-full">
+              <Results />
+            </div>
           </div>
         </div>
-      </header>
+      </div>
     </div>
   );
 }
