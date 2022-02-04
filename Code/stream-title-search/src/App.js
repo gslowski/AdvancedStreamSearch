@@ -71,9 +71,9 @@ function App() {
             <button className="button is-warning" css={css`width: 15%`}>Search</button>
           </div>
           <div className="box" css={css`width: 100%; position: relative; top: 2vh; margin: auto;`}>
-            <div className="columns is-full">
-              <Results />
-            </div>
+
+            <Results streamList={streams} />
+
           </div>
         </div>
       </div>
