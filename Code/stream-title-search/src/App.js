@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
+          <img src='https://raw.githubusercontent.com/gslowski/AdvancedStreamSearch/main/Images/title.png' width="300" height="40" css={css`margin-left: 4%;`}></img>
       </header>
 
       <div className="App-background">
