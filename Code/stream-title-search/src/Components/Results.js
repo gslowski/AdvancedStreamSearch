@@ -63,7 +63,6 @@ const Results = ({ streamList }) => {
     const fetchStreamer = (user_id) => {
         helix.get(`https://api.twitch.tv/helix/users?id=${user_id}`)
             .then((res) => {
-                console.log(res.data.data[0].profile_image_url)
                 document.getElementById(user_id).src = res.data.data[0].profile_image_url;
                 document.getElementById(user_id).style = "width:40px;height:40px;"
             })
